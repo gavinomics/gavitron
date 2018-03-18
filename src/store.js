@@ -15,10 +15,6 @@ export default new Vuex.Store({
         total: ''
     },
 
-    computed: {
-
-    },
-
     getters: {
         cart: state => state.cart,
 
@@ -69,7 +65,7 @@ export default new Vuex.Store({
 
     actions: {
         getItems(context) {
-            console.log("getting items");
+            // console.log("getting items...");
             axios.get("/api/items").then(response => {
                 context.commit('setItems', response.data);
                 return true;
@@ -78,7 +74,7 @@ export default new Vuex.Store({
         },
 
         addItem(context, item) {
-            console.log("Add Items...");
+            // console.log("Add Items...");
             axios.post("/api/items", item).then(response => {
                 return context.dispatch('getItems');
             }).catch(err => {
@@ -86,9 +82,6 @@ export default new Vuex.Store({
         },
 
         addToCart({ commit }, item) {
-            console.log("Adding to Cart...");
-            console.log("ID: " + item.id);
-
             axios.post("/api/items", item).then(response => {
                 console.log("Adding: " + item.id);
                 return context.dispatch('getItems');
@@ -105,7 +98,7 @@ export default new Vuex.Store({
             }).catch(err => {
             });
 
-            commit('UPDATE_ITEM', item)
+            commit('UPDATE_ITEM', item);
         },
 
         deleteItem(context, item) {
@@ -114,7 +107,9 @@ export default new Vuex.Store({
             }).catch(err => {
             });
 
-            commit('DELETE_ITEM', item)
+            console.log(item);
+            
+            commit('DELETE_ITEM', item);
         }
     }
 });

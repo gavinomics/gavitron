@@ -4,7 +4,7 @@
       There are no items in your cart.
       <br>
       <br>
-      <button class="secondaryBtn"><router-link to="/" class="secondaryBtn" style="text-align: center;"> Back to products </router-link></button>
+      <button class="secondaryBtn"><router-link to="/prints" class="secondaryBtn" style="text-align: center;"> Back to products </router-link></button>
     </div>
 
     <div class="cartBox" v-show="productsSize > 0"> 
@@ -55,13 +55,11 @@
   export default {
     name: 'Cart',
     data () {
-      return {
-     }
-   },
+      return {}
+    },
 
     created: function() {
       this.getItems();
-      
     },
 
     computed: {
@@ -78,9 +76,7 @@
     },
 
     methods: {
-      
       updateItem(item) {
-        // console.log("Sending from Cart : " + item.quantity);
         this.$store.dispatch('updateItem', {
           id: item.id,
           quantity: item.quantity,
@@ -88,24 +84,18 @@
       },
 
       itemSubTotal(item) {
-        // var newSubtotal = item.price * item.quantity;
         return item.price * item.quantity;
       },
 
-      addSubTotals(){
-
-      },
-
       removeItem: function (item) {
-            this.$store.dispatch('deleteItem', item);
-            
-        },
+        this.$store.dispatch('deleteItem', item);
+      },
 
       getItems: function() {
         this.$store.dispatch('getItems');
       },
     }
- }
+  }
 
 </script>
 
@@ -116,7 +106,7 @@
 .cartBox {
     width: 648px;
     border: 1px solid #ddd;
-    border-radius: 8px;
+    border-radius: 4px;
     margin: 24px auto;
 }
 
@@ -140,13 +130,10 @@
   margin: 0px;
 }
 
-.itemImg {
-  /* height: 100%; */
-}
-
 .cartItem img {
     border: 2px solid #eee;
-    height: 100px;
+    max-height: 100px;
+    max-width: 160px;
 }
 
 .remove-item {
@@ -192,7 +179,7 @@
   margin:24px auto 24px auto;
   width: 648px;
   border: 1px solid #ddd;
-  border-radius: 8px;
+  border-radius: 4px;
 }
 
 .subBox {

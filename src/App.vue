@@ -98,7 +98,7 @@ h1 {
     font-family: 'OpenSans', sans-serif;
     font-weight: bold;
     font-size: 14px;
-    border-radius: 8px;
+    border-radius: 4px;
     padding: 12px 48px;
     border: 1px solid #000000;
     cursor: pointer;

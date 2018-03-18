@@ -46,7 +46,8 @@ app.post('/api/items', (req, res) => {
 });
 
 app.delete('/api/items/:id', (req, res) => {
-    let id = parseInt(req.params.id);
+    let id = req.params.id;
+    
     items = items.filter(i => {
         return i.id != id
     })

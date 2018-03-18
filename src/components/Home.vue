@@ -1,7 +1,7 @@
 <template>
     <div class="main-content">
         <div style="width: 800px; margin: 0px auto;">
-            <div class="smallText">Selected Graphic Art + Photography </div>
+            <div class="smallText">Selected Art + Photography from various artists</div>
             <br>
             
             <!-- <img style="width: 680px;" src="/static/images/art/at-bladerunner1.jpg">

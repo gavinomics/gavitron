@@ -3,7 +3,7 @@
         <div class="footer">
             <div>
                 <h3 class="label"> Information </h3>
-                <a href="https://github.com/gavinomics/jodijensen.git">GitHub Repository</a> 
+                <a href="https://github.com/gavinomics/gavitron.git">GitHub Repository</a> 
                 <p class="btn" v-bind:class="{ active: about }"><router-link to="/About">About</router-link></p>
                 
                 <p style="color: #999;">Copyright © 2018 Jodi Jensen Watercolors</p>
@@ -11,7 +11,7 @@
             <div>
                 <h3 class="label">Contact</h3>
                 <p>(801) 756-5149</p>
-                <p>service@jodijensen.com</p>
+                <p>gavinomics@gmail.com</p>
                 
             </div>
             <div>
@@ -59,14 +59,14 @@
 }
 
 .footer a:hover {
-    color: #e087ad;
+    color: #FF7257;
 }
 
 .label {
     font-family: 'OpenSans', sans-serif;
     font-size: 12px;
     font-weight: bold;
-    color: #333; /*#e087ad*/
+    color: #333; /*#FF7257*/
     text-transform: uppercase;
     letter-spacing: .2em;
     padding: 0px 0px 12px 0px;
