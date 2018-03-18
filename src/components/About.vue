@@ -1,7 +1,8 @@
 <template>
   <div class="main-content">    
     <div class="about">
-          <img src="/static/images/family.jpg">
+          <img style="width: 600px;" src="/static/images/art/munky2.jpg">
+          <br>
           <br>
             Watercolorist Jodi Jensen is best known for her beautiful florals, adorable bunnies and creative children's illustrations. One of her collectors describes her best: "Her work is realistic, serene and warm. You can smell the flowers, almost sense the bunnies' whiskers move, and feel an incredible sense of peace from her work. You can truly sense what a warm loving and kind person Jodi is just by looking at her work. Once you buy a picture, you are truly hooked for life".<br>
             <br>
@@ -33,9 +34,8 @@
 }
 
 .about {
-  display: block;
-  margin: 0px;
   width: 600px;
+  margin: 0px auto;
 }
 
 

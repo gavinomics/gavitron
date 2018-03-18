@@ -7,7 +7,7 @@
                 <li class="btn" v-bind:class="{ active: home }"><router-link to="/">Home</router-link></li>
                 <li class="btn" v-bind:class="{ active: prints }"><router-link to="/prints">Prints</router-link></li>
                 <li class="btn" v-bind:class="{ active: about }"><router-link to="/about">About</router-link></li>
-                <li class="btn" v-bind:class="{ active: cart }"><router-link to="/cart"><i style="color:#bbb;" class="fas fa-shopping-cart"></i> Cart</router-link></li>
+                <li class="btn" v-bind:class="{ active: cart }"><router-link to="/cart"><i class="fas fa-shopping-cart"></i> Cart</router-link></li>
             </ul>
         </nav>
         <div class="bottomLine"></div>
@@ -16,7 +16,11 @@
 
 <script>
  export default {
-     name: 'AppHeader'
+    name: 'AppHeader',
+    btnHome: true,
+    btnPrints: false,
+    btnAbout: false,
+    btnCart: false
  }
 </script>
 
@@ -89,6 +93,11 @@ nav li:hover {
     color: #000000;
     border-radius: 8px;
     padding: 12px 24px;
+    text-decoration: none;
+}
+
+.btn.active {
+    color: #000000;
     text-decoration: none;
 }
 

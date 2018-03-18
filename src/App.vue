@@ -48,8 +48,6 @@ export default {
     background-color: #fff;
 }
 
-
-
 .smallText {
     font-size: 13px;
     color: #333;

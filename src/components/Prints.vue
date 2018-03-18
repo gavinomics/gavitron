@@ -2,8 +2,8 @@
     <div class="main-content">
         <div class="detailView" v-show="detailViewOpen">
             
-            <button class="imgBtnClose" @click="closeDetailView">
-                <img style="width: 24px;" v-bind:src="closeImgHover"/>
+            <button class="imgBtnClose" @click="closeDetailView" >
+                <div class="labelBtn"><i class="fas fa-times"></i> close</div>
             </button>
             
             <div class="detailViewBox">
@@ -26,7 +26,7 @@
 
                         <div>
                             <div class="label-center">Price</div>
-                            <div class="infoText"> {{ item.price }} </div>
+                            <div class="infoText"> ${{ item.price }} </div>
                         </div>
                     
                     </div>
@@ -47,11 +47,13 @@
                 <div class="label"> PRINTS</div>
                 <ul>
                     <li><button class="btn" v-bind:class="{ active: btnShowAll }" @click="showAll()">All Prints</button></li>
-                    <li><button class="btn" v-bind:class="{ active: btnAshThorp }" @click="showAshThorp()">Ash Thorp</button></li>
-                    <li><button class="btn" v-bind:class="{ active: btnGmunk }" @click="showGmunk()">Gmunk</button></li>
-                    <li><button class="btn" v-bind:class="{ active: btnGeo }" @click="showGeo()">Geo</button></li>
                     <li><button class="btn" v-bind:class="{ active: btnLostBoy }" @click="showLostBoy()">Lost Boy</button></li>
                     <li><button class="btn" v-bind:class="{ active: btnInfra }" @click="showInfra()">Infra</button></li> 
+                    <li><button class="btn" v-bind:class="{ active: btnGeo }" @click="showGeo()">Geo</button></li>
+                    <li><button class="btn" v-bind:class="{ active: btnAshThorp }" @click="showAshThorp()">Ash Thorp</button></li>
+                    <li><button class="btn" v-bind:class="{ active: btnGmunk }" @click="showGmunk()">Gmunk</button></li>
+                    
+                    
                 </ul>
             </div>
 
@@ -365,6 +367,20 @@ export default {
     text-transform: uppercase;
     letter-spacing: .2em;
     padding: 0px 0px 12px 0px;
+}
+
+.labelBtn {
+    font-family: 'OpenSans', sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    color: #999; /*#e087ad*/
+    text-transform: uppercase;
+    letter-spacing: .2em;
+    padding: 0px 0px 12px 0px;
+}
+
+.labelBtn:hover {
+    color: #000;
 }
 
 .label-center {

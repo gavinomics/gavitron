@@ -10,7 +10,7 @@
             <!-- <div class="smallText">Ash Thorp </div>
             <br>
             <br> -->
-            <img style="width: 800px;" src="/static/images/art/g-munky.jpg">
+            <img style="width: 800px;" src="/static/images/art/munky1.jpg">
         </div>
     </div>
 </template>
