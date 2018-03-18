@@ -42,6 +42,12 @@ export default {
 
 /*==============================GLOBAL STYLES==============================*/
 
+.body {
+    margin: 0px;
+    padding: 0px;
+    background-color: #fff;
+}
+
 .main-content {
     margin: 0px;
     padding: 24px;

@@ -10,7 +10,7 @@
     <div class="cartBox" v-show="productsSize > 0"> 
       <div class="cartItem" v-for="item in cart" :key="item.id">
         <div class="cartItemDetails">
-          <div class="cartImg"> 
+          <div class="cartImg" style="margin: 0px auto;"> 
             <img v-bind:src="item.art">
           </div>
           <div class="infoBox">  

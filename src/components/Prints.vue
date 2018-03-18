@@ -68,8 +68,8 @@
 
                         </div>
                     
-                        <div class="smallText"> {{ item.title }} </div>
-                        <div class="id"> #{{ item.id }} </div>
+                        <!--<div class="smallText"> {{ item.title }} </div>
+                        <div class="id"> #{{ item.id }} </div> -->
                     </button>
                 </div>
             </div><!--End artgrid--> 
@@ -396,10 +396,9 @@ export default {
 /*==============================BUTTONS==============================*/
 
 .btn {
-    /*display: block;*/
+    /* text-transform: uppercase; */
     width: 100%;
     margin: 0px;
-    /*border-radius: 4px;*/
     padding: 12px;
     border: 1px solid #fff;
     font-size: 16px;
@@ -438,9 +437,10 @@ export default {
 
 .artContainer {
     position: relative;
-    margin: 0px 40px 0px 0px;
+    margin: 20px 20px;
     width: 200px;
     height: 272px;
+    height: 200px;
 }
 
 .artbox {
