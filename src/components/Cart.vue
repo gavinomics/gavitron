@@ -212,9 +212,6 @@ input {
   height: 24px;
   width: 30px;
   padding-left: 8px;
-
-  /* border-radius: 4px; */
-  /* display: block; */
 }
 
 </style>
