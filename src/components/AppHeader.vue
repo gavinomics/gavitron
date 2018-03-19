@@ -3,25 +3,52 @@
         <a href="index.html"><img style="width: 200px; margin-top: 10px;" src="static/images/artlogo.png"></a>
         <nav>
         <label for="show-menu" class="show-menu">Show Menu</label>   
-            <ul id="menu">
-                <li class="btn" v-bind:class="{ active: home }"><router-link to="/">Home</router-link></li>
-                <li class="btn" v-bind:class="{ active: prints }"><router-link to="/prints">Prints</router-link></li>
-                <li class="btn" v-bind:class="{ active: about }"><router-link to="/about">About</router-link></li>
-                <li class="btn" v-bind:class="{ active: cart }"><router-link to="/cart"><i class="fas fa-shopping-cart"></i> Cart</router-link></li>
-            </ul>
+            <div>
+                <ul id="menu">
+                    <li><router-link to="/home">Home</router-link></li>
+                    <li><router-link to="/prints">Prints</router-link></li>
+                    <li><router-link to="/about">About</router-link></li>
+                    <li>
+                        <router-link to="/cart">
+                            <i class="fas fa-shopping-cart" v-show="productsSize === 0"></i> 
+                            <i class="fas fa-cart-plus" v-show="productsSize > 0" style="color: rgb(207, 64, 36);"></i>
+                            Cart
+                        </router-link>
+                    </li>
+                </ul>
+            </div>
         </nav>
         <div class="bottomLine"></div>
     </header>
 </template>
 
 <script>
- export default {
+import { mapGetters } from 'vuex'
+
+export default {
     name: 'AppHeader',
-    btnHome: true,
-    btnPrints: false,
-    btnAbout: false,
-    btnCart: false
- }
+    data () {
+        return {
+        }
+    },
+    computed: {
+         ...mapGetters([
+            'cart',
+            'subtotal',
+            'shipping',
+            'total',
+        ]),
+        
+        productsSize: function() { 
+            return this.$store.state.cart.length;
+        },
+    },
+
+    methods: {
+        
+    }    
+}
+     
 </script>
 
 <style scoped>
@@ -60,6 +87,7 @@
     float: right;
     color: #999;
     margin: 0px;
+    font-size: 14px;
  }
  
  nav ul {
@@ -81,25 +109,16 @@ nav a {
 }
 
 nav a:hover {
-    color: #000000;
-
+    color: #000;
 }
 
-nav li:hover {
-    color: #000000;
-}
-
-.active {
-    color: #000000;
+nav a:hover,
+ nav a.router-link-active,
+ nav a.router-link-exact-active {
+    color: #000;
     border-radius: 8px;
-    padding: 12px 24px;
     text-decoration: none;
-}
-
-.btn.active {
-    color: #000000;
-    text-decoration: none;
-}
+ }
 
 .cart {
     text-align: right;
@@ -109,7 +128,7 @@ nav li:hover {
  .show-menu {
      text-decoration: none;
      color: #fff;
-     background: #000000;
+     background: #000;
      text-align: center;
      padding: 10px 0;
      display: none;

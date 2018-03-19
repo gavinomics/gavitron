@@ -29,18 +29,21 @@
 
     <div class="checkOutBar" v-show="productsSize > 0">
       <div class="subBox">
+        
         <div>
           <div class="smallText"> Ships within 7 days </div>
         </div>
+
         <div style="text-align: right;">
           <div class="smallText"> Cart subtotal: ${{ subtotal }} </div>
           <div class="smallText"> Shipping: ${{ shipping }} </div>
           <h2> ${{ total }} </h2>
         </div>
+        
       </div>
 
       <div class="subBoxBtn">
-        <button class="secondaryBtn"><router-link to="/" class="secondaryBtn">Keep shopping</router-link></button>
+        <button class="secondaryBtn"><router-link to="/prints" class="secondaryBtn">Keep shopping</router-link></button>
         <button class="primaryBtn" type="submit">Continue to Check out</button>
       </div>
     </div> 
@@ -207,7 +210,9 @@
 input {
   background-color: #f8f8f8;
   height: 24px;
-  width: 40px;
+  width: 30px;
+  padding-left: 8px;
+
   /* border-radius: 4px; */
   /* display: block; */
 }

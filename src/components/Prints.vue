@@ -30,19 +30,23 @@
                         </div>
                     
                     </div>
-                    <!-- <p>Open Edition</p> -->
                     <br>
-                    <button class="primaryBtn" @click="addToCart(item)" v-if="item.quantity === 0"> Add to cart </button>
-                    <button class="primaryBtn" style="background-color: #ccc; border: 1px solid #ccc" v-else> <i class="fas fa-check"></i> Item in Cart </button>
+                    <button class="primaryBtn" @click="addToCart(item)" v-show="item.quantity === 0"> Add to cart </button>
+                    <button class="primaryBtn" style="background-color: #ccc; border: 1px solid #ccc" v-show="item.quantity > 0"> <i class="fas fa-check"></i> Item in Cart </button>
                     <br>
                     <br>
                     <button class="secondaryBtn" v-show="item.quantity > 0"><router-link to="/cart" class="secondaryBtn" style="text-align: center;"> View your shopping cart</router-link></button>
                 </div>
             </div>
+            <div style="min-width: 924px">
+                <!-- <button class="arrowRight" @click="getNextItem(item)"><i class="fas fa-angle-right"></i></button>
+                <button class="arrowLeft" @click="getPrevItem(item)"><i class="fas fa-angle-left"></i></button> -->
+                <!-- <button class="arrowRight"><i class="fas fa-angle-right"></i></button>
+                <button class="arrowLeft"><i class="fas fa-angle-left"></i></button> -->
+            </div>
         </div>
         
         <div class="printBox">
-
             <div class="sideNav">
                 <div class="label"> PRINTS</div>
                 <ul>
@@ -52,8 +56,6 @@
                     <li><button class="btn" v-bind:class="{ active: btnGeo }" @click="showGeo()">Geo</button></li>
                     <li><button class="btn" v-bind:class="{ active: btnAshThorp }" @click="showAshThorp()">Ash Thorp</button></li>
                     <li><button class="btn" v-bind:class="{ active: btnGmunk }" @click="showGmunk()">Gmunk</button></li>
-                    
-                    
                 </ul>
             </div>
 
@@ -139,9 +141,9 @@ export default {
         },
     },
 
-    created: function() {
-        this.getItems();
-    },
+    // created: function() {
+    //     this.getItems();
+    // },
 
     getItems: function() { //add to computed
         this.$store.dispatch('getItems');
@@ -163,6 +165,20 @@ export default {
             this.detailViewOpen = true;
             window.scrollTo(0, 0);
         },
+
+        // getNextItem: function(item) {
+        //     this.item = this.$store.state.cart[1];
+        //     console.log(this.$store.state.cart[1])
+        //     // this.item = item($index++);
+        //     this.detailViewOpen = true;
+        //     window.scrollTo(0, 0);
+        // },
+
+        // getPreviousItem: function(item) {
+        //     // this.item = this.items.indexOf(item);
+        //     this.detailViewOpen = true;
+        //     window.scrollTo(0, 0);
+        // },
 
         showAll: function() {
             this.show = 'all';
@@ -241,6 +257,29 @@ export default {
 
 /*==============================DETAIL-VIEW==============================*/
 
+.arrowRight {
+    position: absolute;
+    top: 360px;
+    right: 24px;
+    color: #ccc;
+    font-size: 48px;
+    border: none;
+}
+
+.arrowLeft {
+    position: absolute;
+    top: 360px;
+    left: 24px;
+    color: #ccc;
+    font-size: 48px;
+    border: none;
+}
+
+.arrowRight:hover, .arrowLeft:hover {
+    color: #000;
+    cursor: pointer;
+}
+
 .imgBtn {
     cursor: pointer;
     background:none;
@@ -261,7 +300,6 @@ export default {
     margin-bottom: 24px;
     width: 100%;
     height: 540px;
-    /*background-color: #eee;*/
     border-bottom: 1px solid #ddd;
 }
 
@@ -274,13 +312,12 @@ export default {
     grid-template-areas: 
     'img info';
     grid-gap: 48px;
-    /*background-color: #ccc;*/
 }
 
 .detailViewContent {
     position: relative;
     padding: 24px;
-    background-color: #eee;
+
 }
 
 .detailViewImg-wide {
@@ -332,32 +369,7 @@ export default {
 
 /*==============================SIDE NAV==============================*/
 
-.sideNav {
-    grid-area: sideNav;
-    display: block;
-    height: 100%;
-    padding-right: 16px;
-    border-right: 1px solid #ddd;
-}
 
-.sideNav ul {
-    margin: 0px;
-    padding: 0px;
-    text-decoration: none;
-}
-
-.sideNav li {
-    margin-left: 0px;
-    display: block;
-    border-radius: 4px;
-    text-decoration: none;
-}
-
-.sideNav button {
-    font-size: 14px;
-    font-family: 'OpenSans', sans-serif;
-    color: #999;
-}
 
 .label {
     font-family: 'OpenSans', sans-serif;
@@ -391,35 +403,6 @@ export default {
     text-transform: uppercase;
     letter-spacing: .2em;
     text-align: center;
-}
-
-/*==============================BUTTONS==============================*/
-
-.btn {
-    /* text-transform: uppercase; */
-    width: 100%;
-    margin: 0px;
-    padding: 12px;
-    border: 1px solid #fff;
-    font-size: 16px;
-    text-align: left;
-    background-color: #fff;
-}
-
-.btn:hover {
-    color: #000000;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.btn.active {
-    color: #000000;
-    text-decoration: none;
-}
-
-.btn:hover.active {
-    color: #000000;   
-    cursor: pointer;
 }
 
 /*==============================ART-MAIN-CONTENT==============================*/

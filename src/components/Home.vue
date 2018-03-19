@@ -1,20 +1,21 @@
 <template>
     <div class="main-content">
-        <div style="width: 800px; margin: 0px auto;">
-            
-            <div class="small-text" style="text-align: center;">Selected art and photography from various artists</div>
+        <div class="homeContent">
+            <router-link to="/prints" style="text-decoration: none; color: #000;">
+            <div class="small-text"> Selected art and photography from various artists</div>
             <br>
-            
             <img style="width: 800px;" src="/static/images/art/munky1.jpg">
             <br>
-            <h3 style="text-align: center;">Gmunk</h3>
+            <h3 style="">Gmunk</h3>
             <br>
             <br>
             <img style="width: 800px" src="/static/images/art/at-bladerunner-cover.jpg">
             <br>
-            <h3 style="text-align: center;">Ash Thorp</h3>
+            <h3 style="">Ash Thorp</h3>
             <br>
             <br>
+        
+        </router-link>
         </div>
     </div>
 </template>
@@ -36,4 +37,10 @@
     /*padding: 0px 24px;*/
 }
 
+.homeContent {
+    color: #000;
+    width: 800px; 
+    margin: 0px auto;
+    
+}
 </style>

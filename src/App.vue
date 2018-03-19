@@ -76,7 +76,7 @@ h1 {
     letter-spacing: .2em;
 }
 
-/*==============================BTNS==============================*/
+/*============================== ACTION BTNS==============================*/
 
 .secondaryBtn {
   text-align: left;
@@ -104,15 +104,49 @@ h1 {
     font-size: 14px;
     border-radius: 4px;
     padding: 12px 48px;
-    border: 1px solid #000000;
+    border: 1px solid #000;
     cursor: pointer;
-    background-color: #000000;
+    background-color: #000;
 }
 
 .primaryBtn:hover {
     background-color: rgb(207, 64, 36);
     border: 1px solid rgb(207, 64, 36);
 }
+
+/*==============================BUTTONS==============================*/
+
+.btn {
+    /* text-transform: uppercase; */
+    width: 100%;
+    margin: 0px;
+    padding: 12px;
+    border: 1px solid #fff;
+    font-size: 16px;
+    text-align: left;
+    background-color: #fff;
+}
+
+.btn:hover {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn.active {
+    color: #000;
+    text-decoration: none;
+}
+
+.btn:hover.active {
+    color: #000;   
+    cursor: pointer;
+}
+
+button:focus {outline:0;}
+btn:focus {outline:0;}
+
+/*==============================GLOBAL TYPOGRAPHY==============================*/
 
 h1 {
     margin: 0px;
@@ -128,5 +162,71 @@ h2 {
     color: #444;
     font-weight: bold; 
 }
+
+
+.sideNav {
+    grid-area: sideNav;
+    display: block;
+    height: 100%;
+    padding-right: 16px;
+    border-right: 1px solid #ddd;
+}
+
+.sideNav ul {
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+}
+
+.sideNav li {
+    margin-left: 0px;
+    display: block;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.sideNav button {
+    font-size: 14px;
+    font-family: 'OpenSans', sans-serif;
+    color: #999;
+}
+
+/*==============================LABELS==============================*/
+
+.label {
+    font-family: 'OpenSans', sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    color: #999; /*#e087ad*/
+    text-transform: uppercase;
+    letter-spacing: .2em;
+    padding: 0px 0px 12px 0px;
+}
+
+.labelBtn {
+    font-family: 'OpenSans', sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    color: #999; /*#e087ad*/
+    text-transform: uppercase;
+    letter-spacing: .2em;
+    padding: 0px 0px 12px 0px;
+}
+
+.labelBtn:hover {
+    color: #000;
+}
+
+.label-center {
+    font-family: 'OpenSans', sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    color: #999; /*#e087ad*/
+    text-transform: uppercase;
+    letter-spacing: .2em;
+    text-align: center;
+}
+
+/*==============================LIST STYLES==============================*/
 
 </style>
