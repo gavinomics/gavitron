@@ -44,7 +44,8 @@
 
       <div class="subBoxBtn">
         <button class="secondaryBtn"><router-link to="/prints" class="secondaryBtn">Keep shopping</router-link></button>
-        <button class="primaryBtn" type="submit">Continue to Check out</button>
+        <button v-if="unClicked" v-on:click="onClick()" class="primaryBtn" type="submit">Continue to Check out</button>
+        <button v-else  class="primaryBtn" style="background-color: #999; border: 1px solid #999;" type="submit">Check out coming soon</button>
       </div>
     </div> 
   </div>
@@ -58,7 +59,9 @@
   export default {
     name: 'Cart',
     data () {
-      return {}
+      return {
+        unClicked: true
+      }
     },
 
     created: function() {
@@ -72,6 +75,10 @@
         'shipping',
         'total',
       ]),
+
+      onClick: function() {
+          this.unClicked = false
+      },
 
       productsSize: function() { 
         return this.$store.state.cart.length;

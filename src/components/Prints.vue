@@ -39,10 +39,8 @@
                 </div>
             </div>
             <div style="min-width: 924px">
-                <!-- <button class="arrowRight" @click="getNextItem(item)"><i class="fas fa-angle-right"></i></button>
-                <button class="arrowLeft" @click="getPrevItem(item)"><i class="fas fa-angle-left"></i></button> -->
-                <!-- <button class="arrowRight"><i class="fas fa-angle-right"></i></button>
-                <button class="arrowLeft"><i class="fas fa-angle-left"></i></button> -->
+                <button class="arrowRight" @click="getNextItem(item)"><i class="fas fa-angle-right"></i></button>
+                <button class="arrowLeft" @click="getPrevItem(item)"><i class="fas fa-angle-left"></i></button>
             </div>
         </div>
         
@@ -166,19 +164,19 @@ export default {
             window.scrollTo(0, 0);
         },
 
-        // getNextItem: function(item) {
-        //     this.item = this.$store.state.cart[1];
-        //     console.log(this.$store.state.cart[1])
-        //     // this.item = item($index++);
-        //     this.detailViewOpen = true;
-        //     window.scrollTo(0, 0);
-        // },
+        getNextItem: function(item) {
+            let randomNumber = Math.floor((Math.random() * 40) + 1);
+            this.item = products[randomNumber];
+            this.detailViewOpen = true;
+            window.scrollTo(0, 0);
+        },
 
-        // getPreviousItem: function(item) {
-        //     // this.item = this.items.indexOf(item);
-        //     this.detailViewOpen = true;
-        //     window.scrollTo(0, 0);
-        // },
+        getPrevItem: function(item) {
+            let randomNumber = Math.floor((Math.random() * 40) + 1);
+            this.item = products[randomNumber];
+            this.detailViewOpen = true;
+            window.scrollTo(0, 0);
+        },
 
         showAll: function() {
             this.show = 'all';
@@ -264,6 +262,8 @@ export default {
     color: #ccc;
     font-size: 48px;
     border: none;
+    border-radius: 4px;
+    background-color: #fff;
 }
 
 .arrowLeft {
@@ -273,6 +273,8 @@ export default {
     color: #ccc;
     font-size: 48px;
     border: none;
+    border-radius: 4px;
+    background-color: #fff;
 }
 
 .arrowRight:hover, .arrowLeft:hover {
